@@ -13,6 +13,7 @@ import {
   TableCell,
   TableBody, makeStyles,
 } from '@material-ui/core'
+import {properties} from './../properties'
 
 
 const useStyles = makeStyles({
@@ -40,7 +41,7 @@ export default function KartGenerator() {
   return (<>
     <form
       onSubmit={(event) => {
-        axios.post('http://192.168.11.129:8080/api/kart/generate', {drivers: drivers, karts: karts})
+        axios.post(properties.host + '/api/kart/generate', {drivers: drivers, karts: karts})
           .then((value) => {
             setData(value.data)
             console.log(value.data)
