@@ -1,7 +1,7 @@
 
 export interface DriverWithKartAndGroup {
   driver: string
-  kartQualification: string
-  kartRace: string
-  group: number
+  kartQualification: string | null
+  kartRace: string | null
+  group: number | null
 }
